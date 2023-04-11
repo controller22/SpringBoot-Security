@@ -1,4 +1,4 @@
-package shop.mtcoding.sercurityapp.core.auth;
+package shop.mtcoding.securityapp.core.auth;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -7,7 +7,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import lombok.Getter;
-import shop.mtcoding.sercurityapp.model.User;
+import shop.mtcoding.securityapp.model.User;
 
 @Getter
 public class MyUserDetails implements UserDetails {

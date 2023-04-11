@@ -1,9 +1,9 @@
-package shop.mtcoding.sercurityapp.dto;
+package shop.mtcoding.securityapp.dto;
 
 import lombok.Getter;
 import lombok.Setter;
-import shop.mtcoding.sercurityapp.core.util.MyDateUtils;
-import shop.mtcoding.sercurityapp.model.User;
+import shop.mtcoding.securityapp.core.util.MyDateUtils;
+import shop.mtcoding.securityapp.model.User;
 
 public class UserResponse {
 

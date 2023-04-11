@@ -1,4 +1,4 @@
-package shop.mtcoding.sercurityapp.dto;
+package shop.mtcoding.securityapp.dto;
 
 import lombok.Getter;
 import lombok.Setter;

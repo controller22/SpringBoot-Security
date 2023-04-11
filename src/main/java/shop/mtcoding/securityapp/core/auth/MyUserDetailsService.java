@@ -1,4 +1,4 @@
-package shop.mtcoding.sercurityapp.core.auth;
+package shop.mtcoding.securityapp.core.auth;
 
 import java.util.Optional;
 
@@ -8,8 +8,8 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import lombok.RequiredArgsConstructor;
-import shop.mtcoding.sercurityapp.model.User;
-import shop.mtcoding.sercurityapp.model.UserRepository;
+import shop.mtcoding.securityapp.model.User;
+import shop.mtcoding.securityapp.model.UserRepository;
 
 @RequiredArgsConstructor
 @Service

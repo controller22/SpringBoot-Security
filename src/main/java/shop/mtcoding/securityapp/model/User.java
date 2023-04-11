@@ -1,4 +1,4 @@
-package shop.mtcoding.sercurityapp.model;
+package shop.mtcoding.securityapp.model;
 
 import java.time.LocalDateTime;
 

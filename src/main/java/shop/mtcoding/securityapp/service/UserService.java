@@ -1,14 +1,17 @@
-package shop.mtcoding.sercurityapp.service;
+package shop.mtcoding.securityapp.service;
+
+import java.util.Optional;
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import lombok.RequiredArgsConstructor;
-import shop.mtcoding.sercurityapp.dto.UserRequest;
-import shop.mtcoding.sercurityapp.dto.UserResponse;
-import shop.mtcoding.sercurityapp.model.User;
-import shop.mtcoding.sercurityapp.model.UserRepository;
+import shop.mtcoding.securityapp.core.jwt.MyJwtProvider;
+import shop.mtcoding.securityapp.dto.UserRequest;
+import shop.mtcoding.securityapp.dto.UserResponse;
+import shop.mtcoding.securityapp.model.User;
+import shop.mtcoding.securityapp.model.UserRepository;
 
 @RequiredArgsConstructor
 @Service
@@ -32,5 +35,19 @@ public class UserService {
         joinDto.setPassword(encPassword);
         User userPS = userRepository.save(joinDto.toEntity());
         return new UserResponse.JoinDto(userPS);
+    }
+
+    public String 로그인(UserRequest.LoginDTO loginDto) {
+        Optional<User> userOP = userRepository.findByUsername(loginDto.getUsername());
+        if (userOP.isPresent()) {
+            User userPS = userOP.get();
+            if (passwordEncoder.matches(loginDto.getPassword(), userPS.getPassword())) {
+                String jwt = MyJwtProvider.create(userPS);
+                return jwt;
+            }
+            throw new RuntimeException("패스워드 틀렸어");
+        } else {
+            throw new RuntimeException("유저네임 없어");
+        }
     }
 }

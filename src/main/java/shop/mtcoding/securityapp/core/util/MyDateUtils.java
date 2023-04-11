@@ -1,4 +1,4 @@
-package shop.mtcoding.sercurityapp.core.util;
+package shop.mtcoding.securityapp.core.util;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
